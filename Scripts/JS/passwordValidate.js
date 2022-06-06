@@ -12,8 +12,10 @@ let numberPassed = document.getElementById("numberPassed");
 let specialCharPassed = document.getElementById("specialCharPassed");
 let lengthPassed = document.getElementById("lengthPassed");
 
-let greenColor = "rgb(129, 161, 129)";
-let redColor = "rgb(221, 153, 153)"
+// let greenColor = "rgb(129, 161, 129)";
+let greenColor = "DarkSeaGreen";
+// let redColor = "rgb(221, 153, 153)"
+let redColor = "coral";
 
 function checkPassword (passwordInput) {
     if (passwordInput){

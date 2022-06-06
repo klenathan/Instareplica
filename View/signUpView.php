@@ -1,8 +1,10 @@
 <?php
-    $regexPasswordCheck = "^\S*(?=\S{8,})(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])\S*$"
+    include("Scripts/signUpAction.php");
 
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        signUpUser();
+    }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -22,10 +24,12 @@
 
     <main>
         <div class="signup-img-wrap">
+            <a href="/">Meowstagram</a>
         </div>
 
         <div class="form-wrap">
-            <form class="log-form" action="../Scripts/signUpAction.php" method="post">
+        <!-- ../Scripts/signUpAction.php -->
+            <form class="log-form" action="" method="post" enctype="multipart/form-data">
                 <h1>Sign Up</h1>
 
                 <p>
@@ -52,6 +56,7 @@
                     type="password" 
                     name="password" 
                     id="password" 
+                    pattern="(?=.*[a-z])+(?=.*[A-Z])+(?=.*[0-9])+(?=.*[^A-Za-z0-9])+(?=.{8,})"
                     required>
                 </p>
 
@@ -70,6 +75,12 @@
                     id="retype_password" 
                     required>
                 </p>
+                <div id="avatarInputWrap" class="input-field">
+                    <label for="avatar">Upload avatar</label>
+                    <input type="file"
+                            id="avatar" name="avatar"
+                            accept="image/png, image/jpeg, image/jpg">
+                </div>
                 <input class="submit-btn"  type="submit" value="Sign Up">
             </form>
         </div>

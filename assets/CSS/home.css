@@ -1,0 +1,92 @@
+.content-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 67%;
+    /* background-color: rebeccapurple; */
+}
+
+.upload-file {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px gray solid; */
+    /* background-color: rgb(236, 236, 236); */
+    box-shadow: 0px 5px 10px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 2rem;
+    width: 60%;
+    padding: 1rem 1rem 0 1rem;
+}
+
+.upload-file form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.avatar {
+    height: 40px;
+    width: 40px;
+    object-fit: cover;
+    border-radius: 7vh;
+}
+
+#status {
+    width: 60%;
+    resize: none;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+#postImg {
+    display: none;
+    cursor: pointer
+}
+
+#imgUploadButton {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+#imgUploadButton input{
+    display: none;
+}
+
+#uploadImgBtn {
+    border-radius: 0.5rem;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    /* background-color: rgba(136,54,255,1); */
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#uploadImgBtn img {
+    height: 2vh;
+}
+
+#uploadPost {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    background-color: rgba(136,54,255,1);
+    font-size: 1rem;
+    border: none;
+}
+
+#mainImg {
+    max-width: 100%;
+    /* width: 100%; */
+    /* padding: 1rem; */
+    opacity: 0;
+}

@@ -1,8 +1,12 @@
+/* Font import */
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
+
 * {
     margin: 0;
     font-family: sans-serif;
     color: black;
     text-decoration: none;
+    padding: 0
 }
 
 html {
@@ -32,8 +36,14 @@ html {
     align-items: center;
 }
 
+#header_logo a{
+    color: white;
+    font-size: 1.5rem;
+    font-family: 'Gloria Hallelujah', cursive;
+}
+
 #search_bar{
-    flex: 6;
+    flex: 4;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -72,13 +82,21 @@ html {
     color: white
 }
 
+#user_info img {
+    height: 4vh;
+    width: 4vh;
+    object-fit: cover;
+    border-radius: 2vh;
+    cursor: pointer;
+}
+
 /* Main section */
 
 main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 2rem 15% 0 15%;
+    padding-top: 2rem;
     min-height: 80vh;
     /* background-color: rgb(48, 66, 87); */
     background: white;

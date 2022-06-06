@@ -1,3 +1,6 @@
+/* Font import */
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
+
 main {
     padding: 0;
     width: 100%;
@@ -16,6 +19,13 @@ main {
     align-items: center;
     justify-content: center;
     background: linear-gradient(90deg, rgba(136,54,255,1) 0%, rgba(54,186,255,1) 100%);
+}
+
+.login-img-wrap a {
+    color: white;
+    font-size: 5rem;
+    font-family: 'Gloria Hallelujah', cursive;
+    cursor: pointer;
 }
 
 .form-wrap {

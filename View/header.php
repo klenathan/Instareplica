@@ -7,7 +7,7 @@
 
 <div class="header">
     <div id="header_logo">
-        <a href="/">Home</a>
+        <a href="/">Meowstagram</a>
     </div>
 
     <div id="search_bar">
@@ -18,14 +18,17 @@
         id="main_search_bar"
         placeholder="Search...">
     </div>
-
+    
     <div id="user_info">
         <?php
         if(isset($_COOKIE["user"])){
             echo '
             <a href="../Scripts/signOut.php">SIGN OUT</a>
             <p>'.$_COOKIE["user"].'</p>
-            <p>Avatar</p>
+            <img 
+                src="/data/userAvatar/'.$_COOKIE["user"].'.jpg"
+                alt="avatar"
+                id="avatar">
             ';
         } else {
             echo '

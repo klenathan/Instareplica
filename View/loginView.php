@@ -19,7 +19,7 @@
 
     <main>
         <div class="login-img-wrap">
-            
+            <a href="/">Meowstagram</a>
         </div>
         <div class="form-wrap">
 
@@ -76,8 +76,9 @@
                 <div id="login_signup_container">
                     <input class="submit-btn" type="submit" value="Login">
                     <p>
-                    Don't have an account?	&nbsp;<a id="sign_up_btn" href="/signup.php"> Create new account</a>
+                    Don't have an account?
                     </p>
+                    <a id="sign_up_btn" href="/signup.php">Create new account</a>
                 </div>
                 
             </form>
