@@ -1,6 +1,12 @@
 <?php
+
     if (isset($_COOKIE["user"])) {
         $userAvatarSrc = "data/userAvatar/" . $_COOKIE["user"] . ".jpg";
+    }
+    include_once("Scripts/uploadPost.php");
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        uploadPost();
+        header("Location: /");
     }
 ?>
 <!DOCTYPE html>
@@ -13,6 +19,7 @@
 
     <link rel="stylesheet" href="/assets/CSS/style.css">
     <link rel="stylesheet" href="/assets/CSS/home.css">
+    <link rel="stylesheet" href="/assets/CSS/post.css">
     <link rel="icon" href="/assets/images/favicon.JPG">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,0" />
@@ -43,7 +50,7 @@
                 if(isset($_COOKIE["user"])){
                     ?>
                     <div class="upload-file">
-                    <form action="Scripts/uploadPost.php" method="post">
+                    <form action="" method="post" enctype="multipart/form-data">
                         <img class="avatar" id="avatar"
                         src="<?php echo $userAvatarSrc?>" alt="avatar">
                         <textarea 
@@ -57,12 +64,17 @@
                             <img src="assets/images/uploadIcon.png" alt="upload image">
                         </label>
 
+                        
+                        <input type="file" name="postImg" 
+                        onchange="loadFile(event)"
+                        id="postImg" accept="image/*"
+                        required
+                        />
+                        
                         <input action="" type="submit" name="uploadPost"
                         value="Post"
                         id="uploadPost"/>
-                        <input type="file" name="postImg" 
-                            onchange="loadFile(event)"
-                            id="postImg" accept="image/*"/>
+
                     </form>
                     <img id="mainImg" alt="image">
                     </div>
@@ -73,7 +85,9 @@
                     ?>
             
             <div class="post-wrap">
-
+                <?php
+                    include_once("Scripts/posts.php")
+                ?>
             </div>
         </div>
     </main>

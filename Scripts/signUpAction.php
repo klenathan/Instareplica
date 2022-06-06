@@ -21,7 +21,6 @@
         // Handle Image
         $target_dir = "data/userAvatar/";
         $target_file = $target_dir . $userName . ".jpg";
-        $uploadOk = 1;
         $imageFile = "data/userAvatar/";
 
         if ($_FILES["avatar"]["name"] != "False"){
