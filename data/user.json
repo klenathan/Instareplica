@@ -1,3 +1,4 @@
 {
-  "one": { "username": "one", "password": 123 }
+  "one": { "password": 123 },
+  "two": { "password": 123 }
 }

@@ -4,34 +4,28 @@
     $postData = readData("data/post.json");
     $postJsonData = json_decode($postData, true);
 
+    
+
     if (is_array($postJsonData)){
         foreach ($postJsonData as $key => $value) {
+            if ($value["author"] == $_GET["u"]) {
             ?>
-
-            <div class="posts">
-
+            
+            <div class="profile-posts">
                 <div class="postInfo">
                     <div class="userInfo">
                         <img src="data/userAvatar/<?php echo $value["author"]?>.jpg" 
                         class="postAvatar"
                         alt="<?php echo $value["author"]?>'s avatar">
-                        <a href="/u.php?u=<?php echo $value["author"];?>" 
-                        class="headerAvatarWrap">
-                            <p class="author-name"><?php echo $value["author"]?></p>
-                        </a>
+                        <p class="author-name"><?php echo $value["author"]?></p>
                     </div>
 
-                    <?php
-                        if ($_COOKIE['user'] == $value["author"]){
-                            ?>
-                    <div class="postOpen">
-                        <p>Delete</p>
-                    </div>
-                        <?php
-                        }
-                    ?>
                     <div class="postOpen">
                         <p><?php echo $value["visible"] ?></p>
+                    </div>
+
+                    <div class="postOpen">
+                        <p>Delete</p>
                     </div>
                 </div>
 
@@ -46,8 +40,14 @@
                     <p class="statusTime"><?php echo timeDifferent($value["time"])?> ago</p>
                 </div>
 
+                <!-- <div class="interactions">
+                    <button class="like-btn">Like</button>
+                    <p>&emsp;<?php echo $value["like"]?></p>
+                </div> -->
+
             </div>
             <?php
+            }
         }
     }
     

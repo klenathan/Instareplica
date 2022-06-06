@@ -25,10 +25,13 @@
             echo '
             <a href="../Scripts/signOut.php">SIGN OUT</a>
             <p>'.$_COOKIE["user"].'</p>
-            <img 
-                src="/data/userAvatar/'.$_COOKIE["user"].'.jpg"
-                alt="avatar"
-                id="avatar">
+            <a href="/u.php?u='.$_COOKIE["user"].'" class="headerAvatarWrap"> 
+                <img 
+                    src="/data/userAvatar/'.$_COOKIE["user"].'.jpg"
+                    alt="avatar"
+                    id="avatar">
+            </a>
+            
             ';
         } else {
             echo '

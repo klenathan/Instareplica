@@ -19,13 +19,16 @@
         $status = $_POST["status"];
         $visible = "Public";
 
-        $postJsonData[$postId] = array(
+        
+        $newPost = array( $postId => array(
             "author"=> $author,
-            "like"=>0,
             "status"=>$status,
             "imgPath"=>$target_file,
-            "visible"=>$visible
-        );
+            "visible"=>$visible,
+            "time"=>time()
+        ));
+
+        $postJsonData = $newPost + $postJsonData;
 
         $imageFile = $_FILES["postImg"]["tmp_name"];
 

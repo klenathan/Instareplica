@@ -33,56 +33,43 @@
     </header>
 
     <main>
-        <h1>
-            <?php
-            if(isset($_COOKIE["user"])){
-                echo "Welcome, ".$_COOKIE["user"] . "!";
-            } else {
-                echo "Please Log In";
-            }
-            ?>
-        </h1>
         
         <div class="content-wrap">
-            
-            
+            <?php
+            if(isset($_COOKIE["user"])){
+                ?>
+                <div class="upload-file">
+                <form action="" method="post" enctype="multipart/form-data">
+                    <img class="avatar" id="avatar"
+                    src="<?php echo $userAvatarSrc?>" alt="avatar">
+                    <textarea 
+                        id="status" 
+                        name="status" 
+                        rows="2"
+                        placeholder="What are you thinking, <?php echo $_COOKIE["user"]?>?"></textarea>
+                    
+
+                    <label id="uploadImgBtn" for="postImg">
+                        <img src="assets/images/uploadIcon.png" alt="upload image">
+                    </label>
+
+                    
+                    <input type="file" name="postImg" 
+                    onchange="loadFile(event)"
+                    id="postImg" accept="image/*"
+                    required
+                    />
+                    
+                    <input action="" type="submit" name="uploadPost"
+                    value="Post"
+                    id="uploadPost"/>
+
+                </form>
+                <img id="mainImg" alt="image">
+                </div>
                 <?php
-                if(isset($_COOKIE["user"])){
-                    ?>
-                    <div class="upload-file">
-                    <form action="" method="post" enctype="multipart/form-data">
-                        <img class="avatar" id="avatar"
-                        src="<?php echo $userAvatarSrc?>" alt="avatar">
-                        <textarea 
-                            id="status" 
-                            name="status" 
-                            rows="2"
-                            placeholder="What are you thinking?"></textarea>
-                        
-
-                        <label id="uploadImgBtn" for="postImg">
-                            <img src="assets/images/uploadIcon.png" alt="upload image">
-                        </label>
-
-                        
-                        <input type="file" name="postImg" 
-                        onchange="loadFile(event)"
-                        id="postImg" accept="image/*"
-                        required
-                        />
-                        
-                        <input action="" type="submit" name="uploadPost"
-                        value="Post"
-                        id="uploadPost"/>
-
-                    </form>
-                    <img id="mainImg" alt="image">
-                    </div>
-                    <?php
-                } else {
-                    echo "<p>Please Signin</p>";
-                }
-                    ?>
+            }
+                ?>
             
             <div class="post-wrap">
                 <?php
